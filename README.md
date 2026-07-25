@@ -85,10 +85,10 @@ json
 Ambos servicios fueron probados usando **Postman**.
 
 ### Prueba SOAP
-[CAPTURA AQUÍ ]
+![Prueba SOAP en Postman](img/soap.png)
 
 ### Prueba REST
-[CAPTURA AQUÍ ]
+![Prueba REST en Postman](img/rest.png)
 
 ## 🔍 Comparación entre SOAP y REST
 
