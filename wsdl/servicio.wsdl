@@ -1,0 +1,50 @@
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://umg.edu.gt.desarrollo.web/soap/saludo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://umg.edu.gt.desarrollo.web/soap/saludo" targetNamespace="http://umg.edu.gt.desarrollo.web/soap/saludo">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://umg.edu.gt.desarrollo.web/soap/saludo">
+            <xs:element name="saludarRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="saludarResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="mensaje" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="saludarRequest">
+        <wsdl:part element="tns:saludarRequest" name="saludarRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="saludarResponse">
+        <wsdl:part element="tns:saludarResponse" name="saludarResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="SaludoPort">
+        <wsdl:operation name="saludar">
+            <wsdl:input message="tns:saludarRequest" name="saludarRequest"> </wsdl:input>
+            <wsdl:output message="tns:saludarResponse" name="saludarResponse"> </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SaludoPortSoap11" type="tns:SaludoPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="saludar">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="saludarRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="saludarResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SaludoPortService">
+        <wsdl:port binding="tns:SaludoPortSoap11" name="SaludoPortSoap11">
+            <soap:address location="http://localhost:8081/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
