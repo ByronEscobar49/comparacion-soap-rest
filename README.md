@@ -11,34 +11,6 @@ utilizando dos estilos de servicios web distintos: **SOAP** (Contract-First) y *
   - Módulo `soap`: Spring-WS + JAXB
   - Módulo `rest`: Spring Web
 
-## 🗂️ Estructura del proyecto
-
-comparacion-soap-rest/
-├── README.md
-├── .gitignore
-├── pom.xml                # POM padre (agrega Spring Boot BOM)
-├── soap/                  # Módulo SOAP (Contract-First)
-│   ├── pom.xml
-│   └── src/main/
-│       ├── java/umg/edu/gt/desarrollo/soap/
-│       │   ├── SoapApplication.java
-│       │   ├── config/WebServiceConfig.java
-│       │   └── endpoint/SaludarEndpoint.java
-│       └── resources/
-│           ├── saludo.xsd
-│           └── application.properties
-├── rest/                  # Módulo REST
-│   ├── pom.xml
-│   └── src/main/
-│       ├── java/umg/edu/gt/desarrollo/rest/
-│       │   ├── RestApplication.java
-│       │   ├── controller/SaludoController.java
-│       │   └── model/SaludoResponse.java
-│       └── resources/
-│           └── application.properties
-└── wsdl/
-    └── servicio.wsdl      # Copia del WSDL generado (para referencia)
-
 ## ▶️ Instrucciones para ejecutar el proyecto
 
 ### Requisitos previos
